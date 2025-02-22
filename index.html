@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Add Font Awesome for Icons -->
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div><img src="images/favicon.ico"  width="50px" height="50px" class="rounded-circle"/></div>
+        <div class="menu-toggle">☰</div> 
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div>
+            <button id="dark-mode-toggle">🌙</button>
+        </div>
+    </header>
+    <!-- Home Section -->
+    <section id="home">
+        <div class="content">
+            <h1>Hi, I'm <span>Mucharom</span></h1>
+            <div class="typing-container subtitle">
+                <p>A Passionate Software Engineer</p>
+                <p>Technical & Impactful</p>
+            </div>  
+            
+            <div class="subtitle-text" id="typing-text">
+                <p>"Full-Stack Developer | Problem Solver | Tech Enthusiast.</p>
+                <p>"Bridging Creativity and Technology with Scalable Code."</p>
+                <p>"Designing Robust Software for a Better Tomorrow."</p>
+            </div>
+            <div id="explore">
+                <a href="#projects" class="btn">Explore</a>  
+            </div>         
+        </div>  
+    </section>
+
+     <!-- Floating Button -->
+     <button id="scrollToTop" class="btn">↑</button>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>"I'm a passionate Software Engineer with expertise in modern web and mobile app development. I specialize in building scalable, user-friendly applications that enhance digital experiences. With a keen eye for detail and a problem-solving mindset, I thrive on transforming ideas into high-performance solutions."</p>
+        <div class="subtitle-container">
+            <p class="subtitle-text-m">Building Innovative Solutions, One Line of Code at a Time.</p>
+            <p class="subtitle-text-m">Turning Vision into Reality Through Technology.</p>
+            <p class="subtitle-text-m">Crafting Seamless Digital Experiences with Code.</p>
+        </div>        
+        <a href="#contact" class="btn">Hire Me</a>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skill-list">
+            <span>Flutter</span>
+            <span>JavaScript</span>
+            <span>Firebase</span>
+            <span>SQL</span>
+            <span>React</span>
+            <span>Node.js</span>
+            <span>Laravel</span>
+            <span>Django</span>
+            <span>Flask</span>
+            <span>Git</span>
+            <span>Docker</span>
+            <span>Android development</span>
+            <span>Html</span>
+            <span>Css</span>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Work Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <h3>Full Stack Developer</h3>
+                <p class="company">PT Ruangkerja Software Engineering | 2017 - 2021</p>
+                <p>Developed modern web and mobile applications using java, codeigniter, and Firebase.</p>
+            </div>
+    
+            <div class="experience-card">
+                <h3>Full Stack Developer</h3>
+                <p class="company">PT Bumi Tekno Indonesia | 2021 - 2024</p>
+                <p>Developed modern web and mobile applications using flutter, Laravel,Node js, and Firebase .</p>
+            </div>
+    
+            <div class="experience-card">
+                <h3>Intern - IT Operational </h3>
+                <p class="company">Nandhut Outlet | 2016 </p>
+                <p> IT Operational E-commerce.</p>
+            </div>
+        </div>
+    </section>    
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <!-- Filtering Buttons -->
+        <div class="filter-buttons">
+            <button onclick="filterProjects('all')">All</button>
+            <button onclick="filterProjects('web')">Web</button>
+            <button onclick="filterProjects('mobile')">Mobile</button>
+            <button onclick="filterProjects('uiux')">UI/UX</button>
+        </div>
+        <div class="gallery">
+            <div class="project-card" data-category="mobile" onclick="openModal('project1')">
+                <img src="images/project1-1.jpg" alt="EPOS System">
+                <h3>Aplikasi Kasir Modern</h3>
+            </div>
+            <div class="project-card" data-category="web" onclick="openModal('project2')">
+                <img src="images/project2-1.jpg" alt="Absensi QRcode">
+                <h3>Absensi QRcode</h3>
+            </div>
+            <div class="project-card" data-category="uiux" onclick="openModal('project3')">
+                <img src="images/project3-1.jpg" alt="Portfolio UI">
+                <h3>Portfolio UI</h3>
+            </div>
+            <div class="project-card" data-category="mobile" onclick="openModal('project4')">
+                <img src="images/project4-1.jpg" alt="Agen Kemitraan Haj">
+                <h3>Kemitraan Haj Apps</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Viewing Projects -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Project Image">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:mucharomtzaka@gmail.com">mucharomtzaka@gmail.com</a></p>
+        <p><i class="fab fa-github"></i>  <a href="https://github.com/mucharomtzaka" target="_blank">Mucharomtzaka</a></p>
+        <p><i class="fab fa-linkedin"></i>  <a href="https://www.linkedin.com/in/mucharom-26594976/" target="_blank">Mucharom</a></p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/62895320155363" target="_blank">Chat on WhatsApp</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mucharom. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
